@@ -1,5 +1,7 @@
 " Plugins will be downloaded under the specified directory.
 call plug#begin()
+" markdown read
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 " Declare the list of plugins.
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
