@@ -32,8 +32,11 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set t_Co=256
+" 相對行數
+set relativenumber
 " coc 讀取時間
 set updatetime=500
+
 let g:lsc_auto_map = v:true
 " dart 儲存自動format
 let g:dart_format_on_save = 1
@@ -45,12 +48,14 @@ let g:dart_style_guide = 2
 let g:dart_format_on_save = 1
 let g:lsc_auto_map = v:true
 autocmd BufWritePre *.dart* DartFmt
+
 syntax on
 syntax enable
 colorscheme dracula
+"coc 設定
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
-"ctrl p
+"ctrl l
 nnoremap <C-l> :Files<CR>
 " Flutter Hot Reload
 nnoremap <leader>fa :FlutterRun<cr>
@@ -62,6 +67,7 @@ nnoremap <leader>fD :FlutterVisualDebug<cr>
 nnoremap <leader>bn :bnext<cr>
 nnoremap <leader>bp :bprevious<cr>
 nnoremap <leader>bd :bdelete<cr>
+
 " coc action 快捷
 " Remap for do codeAction of selected region
 function! s:cocActionsOpenFromSelected(type) abort
@@ -80,7 +86,6 @@ nnoremap <silent><F4>  :FlutterEmulatorsLaunch iOS Simulator<cr>
 let g:airline#extensions#tabline#enabled = 1
 let g:NERDSpaceDelims = 2
 
-set autoindent
 " Automatically closing braces
 inoremap {<CR> {<CR>}<Esc>ko<tab>
 inoremap [<CR> [<CR>]<Esc>ko<tab>
