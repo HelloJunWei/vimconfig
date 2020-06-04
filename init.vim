@@ -32,6 +32,8 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set t_Co=256
+set expandtab
+set incsearch
 " 相對行數
 set relativenumber
 " coc 讀取時間
