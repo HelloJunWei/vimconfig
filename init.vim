@@ -14,6 +14,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
 " flutter 套件
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
@@ -95,4 +96,11 @@ let g:NERDSpaceDelims = 2
 inoremap {<CR> {<CR>}<Esc>ko
 inoremap [<CR> [<CR>]<Esc>ko
 inoremap (<CR> (<CR>)<Esc>ko
-
+" 啟動 easymotion
+map <Leader>s <Plug>(easymotion-s2)
+" 行數跳轉
+map <Leader><Leader>j <Plug>(easymotion-j)
+map <Leader><Leader>k <Plug>(easymotion-k)
+" 行內跳轉
+map <Leader><leader>; <Plug>(easymotion-linebackward)
+map <Leader><leader>l <Plug>(easymotion-lineforward)
