@@ -12,6 +12,8 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 " flutter 套件
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
@@ -69,7 +71,9 @@ nnoremap <leader>fD :FlutterVisualDebug<cr>
 nnoremap <leader>bn :bnext<cr>
 nnoremap <leader>bp :bprevious<cr>
 nnoremap <leader>bd :bdelete<cr>
-
+" tab resize 
+nnoremap <silent> <leader>+ :vertical reszie+10<cr> 
+nnoremap <silent> <leader>- :vertical reszie-10<cr> 
 " coc action 快捷
 " Remap for do codeAction of selected region
 function! s:cocActionsOpenFromSelected(type) abort
@@ -87,8 +91,8 @@ nnoremap <silent><F4>  :FlutterEmulatorsLaunch iOS Simulator<cr>
 " 顯示tab
 let g:airline#extensions#tabline#enabled = 1
 let g:NERDSpaceDelims = 2
-
 " Automatically closing braces
-inoremap {<CR> {<CR>}<Esc>ko<tab>
-inoremap [<CR> [<CR>]<Esc>ko<tab>
-inoremap (<CR> (<CR>)<Esc>ko<tab>
+inoremap {<CR> {<CR>}<Esc>ko
+inoremap [<CR> [<CR>]<Esc>ko
+inoremap (<CR> (<CR>)<Esc>ko
+
