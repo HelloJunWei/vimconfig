@@ -61,7 +61,7 @@ colorscheme dracula
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 "ctrl l
-nnoremap <C-l> :Files<CR>
+nnoremap <leader>p :Files<CR>
 " Flutter Hot Reload
 nnoremap <leader>fa :FlutterRun<cr>
 nnoremap <leader>fq :FlutterQuit<cr>
@@ -73,8 +73,8 @@ nnoremap <leader>bn :bnext<cr>
 nnoremap <leader>bp :bprevious<cr>
 nnoremap <leader>bd :bdelete<cr>
 " tab resize 
-nnoremap <silent> <leader>+ :vertical reszie+10<cr> 
-nnoremap <silent> <leader>- :vertical reszie-10<cr> 
+nnoremap <silent> <leader>+ :vertical resize+10<cr> 
+nnoremap <silent> <leader>- :vertical resize-10<cr> 
 " coc action 快捷
 " Remap for do codeAction of selected region
 function! s:cocActionsOpenFromSelected(type) abort
@@ -93,9 +93,9 @@ nnoremap <silent><F4>  :FlutterEmulatorsLaunch iOS Simulator<cr>
 let g:airline#extensions#tabline#enabled = 1
 let g:NERDSpaceDelims = 2
 " Automatically closing braces
-inoremap {<CR> {<CR>}<Esc>ko
-inoremap [<CR> [<CR>]<Esc>ko
-inoremap (<CR> (<CR>)<Esc>ko
+" inoremap {<CR> {<CR>}<Esc>ko
+" inoremap [<CR> [<CR>]<Esc>ko
+" inoremap (<CR> (<CR>)<Esc>ko
 " 啟動 easymotion
 map <Leader>s <Plug>(easymotion-s2)
 " 行數跳轉
@@ -104,3 +104,12 @@ map <Leader><Leader>k <Plug>(easymotion-k)
 " 行內跳轉
 map <Leader><leader>; <Plug>(easymotion-linebackward)
 map <Leader><leader>l <Plug>(easymotion-lineforward)
+
+set nowrap
+" set colorcolumn=90
+
+
+" highlight  ColorColumn ctermbg=0 guibg=lightgrey
+
+set smartindent
+
