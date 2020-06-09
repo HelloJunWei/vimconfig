@@ -102,7 +102,7 @@ map <Leader>s <Plug>(easymotion-s2)
 map <Leader><Leader>j <Plug>(easymotion-j)
 map <Leader><Leader>k <Plug>(easymotion-k)
 " 行內跳轉
-map <Leader><leader>; <Plug>(easymotion-linebackward)
+map <Leader><leader>h <Plug>(easymotion-linebackward)
 map <Leader><leader>l <Plug>(easymotion-lineforward)
 
 set nowrap
