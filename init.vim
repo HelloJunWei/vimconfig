@@ -1,4 +1,4 @@
-" Plugins will be downloaded under the specified directory.
+ " Plugins will be downloaded under the specified directory.
 call plug#begin()
 " markdown read
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
@@ -105,11 +105,12 @@ map <Leader><Leader>k <Plug>(easymotion-k)
 map <Leader><leader>h <Plug>(easymotion-linebackward)
 map <Leader><leader>l <Plug>(easymotion-lineforward)
 
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+
+
 set nowrap
-" set colorcolumn=90
-
-
-" highlight  ColorColumn ctermbg=0 guibg=lightgrey
 
 set smartindent
 
