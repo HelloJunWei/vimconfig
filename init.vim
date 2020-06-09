@@ -41,6 +41,7 @@ set incsearch
 set relativenumber
 " coc 讀取時間
 set updatetime=500
+set scrolloff=1
 
 let g:lsc_auto_map = v:true
 " dart 儲存自動format
