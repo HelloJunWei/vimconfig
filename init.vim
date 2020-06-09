@@ -41,7 +41,14 @@ set incsearch
 set relativenumber
 " coc 讀取時間
 set updatetime=500
+
 set scrolloff=1
+
+set nowrap
+set smartindent
+
+set showmatch
+set matchtime=1
 
 let g:lsc_auto_map = v:true
 " dart 儲存自動format
@@ -58,17 +65,6 @@ autocmd BufWritePre *.dart* DartFmt
 syntax on
 syntax enable
 colorscheme dracula
-"coc 設定
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-references)
-"ctrl l
-nnoremap <leader>p :Files<CR>
-" Flutter Hot Reload
-nnoremap <leader>fa :FlutterRun<cr>
-nnoremap <leader>fq :FlutterQuit<cr>
-nnoremap <leader>fr :FlutterHotReload<cr>
-nnoremap <leader>fR :FlutterHotRestart<cr>
-nnoremap <leader>fD :FlutterVisualDebug<cr>
 " buffer
 nnoremap <leader>bn :bnext<cr>
 nnoremap <leader>bp :bprevious<cr>
@@ -76,27 +72,26 @@ nnoremap <leader>bd :bdelete<cr>
 " tab resize 
 nnoremap <silent> <leader>+ :vertical resize+10<cr> 
 nnoremap <silent> <leader>- :vertical resize-10<cr> 
-" coc action 快捷
-" Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <leader>. :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>. :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-" 樹狀結構 <F5> 開啟
-nnoremap <silent> <F5> :NERDTree<CR>
 " 分割視窗
 nnoremap <leader>wv <C-w>v<C-w>t
 nnoremap <leader>ws <C-w>s<C-w>t
-" 開啟模擬器
-nnoremap <silent><F4>  :FlutterEmulatorsLaunch iOS Simulator<cr>
 " 顯示tab
 let g:airline#extensions#tabline#enabled = 1
 let g:NERDSpaceDelims = 2
-" Automatically closing braces
-" inoremap {<CR> {<CR>}<Esc>ko
-" inoremap [<CR> [<CR>]<Esc>ko
-" inoremap (<CR> (<CR>)<Esc>ko
+
+
+" visual 模式下可以 移動code
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" 自動補齊括號 (先測試看看好不好用
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+
+
+
+" 套件相關快捷設定
 " 啟動 easymotion
 map <Leader>s <Plug>(easymotion-s2)
 " 行數跳轉
@@ -106,12 +101,29 @@ map <Leader><Leader>k <Plug>(easymotion-k)
 map <Leader><leader>h <Plug>(easymotion-linebackward)
 map <Leader><leader>l <Plug>(easymotion-lineforward)
 
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+" 樹狀結構 <F5> 開啟 
+nnoremap <silent> <F5> :NERDTree<CR>
 
+" coc action 快捷
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
 
+xmap <silent> <leader>. :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>. :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
 
-set nowrap
+"ctrl p fzzf
+nnoremap <leader>p :Files<CR>
+" Flutter Hot Reload flutter 套件
+nnoremap <leader>fa :FlutterRun<cr>
+nnoremap <leader>fq :FlutterQuit<cr>
+nnoremap <leader>fr :FlutterHotReload<cr>
+nnoremap <leader>fR :FlutterHotRestart<cr>
+nnoremap <leader>fD :FlutterVisualDebug<cr>
+" 開啟模擬器
+nnoremap <silent><F4>  :FlutterEmulatorsLaunch iOS Simulator<cr>
 
-set smartindent
 
