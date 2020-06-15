@@ -22,6 +22,8 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" javascript hightlight
+Plug 'pangloss/vim-javascript'
 " 樹狀結構
 Plug 'preservim/nerdtree'
 " List ends here. Plugins become visible to Vim after this call.
