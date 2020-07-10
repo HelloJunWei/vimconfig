@@ -137,7 +137,7 @@ xmap <silent> <leader>. :<C-u>execute 'CocCommand actions.open ' . visualmode()<
 nmap <silent> <leader>. :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
-
+nmap <leader>rr <Plug>(coc-rename)
 "ctrl p fzzf
 nnoremap <leader>p :Files<CR>
 
