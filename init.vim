@@ -43,6 +43,8 @@ Plug 'vim-airline/vim-airline-themes'
 " javascript hightlight
 Plug 'pangloss/vim-javascript'
 
+" indent line
+Plug 'Yggdroot/indentLine'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 filetype plugin on
