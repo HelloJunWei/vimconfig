@@ -6,7 +6,6 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-
 " 自動補全 類似 you complete me
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -45,10 +44,15 @@ Plug 'pangloss/vim-javascript'
 
 " vue
 Plug 'posva/vim-vue'
-
 " indent line
 Plug 'Yggdroot/indentLine'
 " List ends here. Plugins become visible to Vim after this call.
+"
+" typescript
+" typescript 用 treesitter 去highlight
+" 因為德古拉套件的支援較少，就不用typescript-vim 了
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 call plug#end()
 filetype plugin on
 let mapleader = " "
@@ -84,10 +88,14 @@ let dart_html_in_string=v:true
 let g:dart_style_guide = 2
 let g:dart_format_on_save = 1
 let g:lsc_auto_map = v:true
+" 讓vue 套件只highlight HTML js css (不highlight typescript)
+let g:vue_pre_processors = []
 autocmd BufWritePre *.dart* DartFmt
 
 syntax on
 syntax enable
+
+
 colorscheme dracula
 
 " buffer
@@ -112,7 +120,7 @@ let g:NERDSpaceDelims = 2
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" 自動補齊括號 
+ " 自動補齊括號 
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
 inoremap { {}<ESC>i
@@ -154,4 +162,15 @@ nnoremap <leader>fD :FlutterVisualDebug<cr>
 " 開啟模擬器
 nnoremap <silent><F4>  :FlutterEmulatorsLaunch iOS Simulator<cr>
 
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+  },
+}
+EOF
 
