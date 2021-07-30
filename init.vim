@@ -138,17 +138,11 @@ map <Leader><leader>h <Plug>(easymotion-linebackward)
 map <Leader><leader>l <Plug>(easymotion-lineforward)
 
 
-" coc action 快捷
-" Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
 
-xmap <silent> <leader>. :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>. :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nmap <leader>rr <Plug>(coc-rename)
+nmap <silent> <leader>. v<Plug>(coc-codeaction-selected)
 "ctrl p fzzf
 nnoremap <leader>p :Files<CR>
 
