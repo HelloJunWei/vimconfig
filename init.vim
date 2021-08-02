@@ -111,6 +111,10 @@ nnoremap <silent> <leader>- :vertical resize-10<cr>
 nnoremap <leader>wv <C-w>v<C-w>t
 nnoremap <leader>ws <C-w>s<C-w>t
 
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
 " 顯示tab
 let g:airline#extensions#tabline#enabled = 1
 let g:NERDSpaceDelims = 2
