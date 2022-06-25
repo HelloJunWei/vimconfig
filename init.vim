@@ -16,6 +16,8 @@ Plug 'junegunn/fzf.vim'
 " snippets
 Plug 'honza/vim-snippets'
 Plug 'garbas/vim-snipmate'
+" prop
+Plug 'uarun/vim-protobuf'
 
 " 快速註解
 Plug 'preservim/nerdcommenter'
