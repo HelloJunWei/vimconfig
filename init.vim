@@ -7,7 +7,8 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 " 自動補全 類似 you complete me
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
 " 模糊搜尋
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -16,8 +17,6 @@ Plug 'junegunn/fzf.vim'
 " snippets
 Plug 'honza/vim-snippets'
 Plug 'garbas/vim-snipmate'
-" prop
-Plug 'uarun/vim-protobuf'
 
 " 快速註解
 Plug 'preservim/nerdcommenter'
@@ -54,6 +53,9 @@ Plug 'Yggdroot/indentLine'
 " typescript 用 treesitter 去highlight
 " 因為德古拉套件的支援較少，就不用typescript-vim 了
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" sticky header 效果
+Plug 'wellle/context.vim'
 
 call plug#end()
 filetype plugin on
@@ -174,3 +176,4 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+let g:context_enabled = 1
