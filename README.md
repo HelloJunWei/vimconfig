@@ -21,3 +21,6 @@ vim-plug: https://github.com/junegunn/vim-plug
 :TSInstall query
 
 需要安裝 kitty 以及 tmux
+
+kitty config path: ~/.config/kitty/kitty.conf
+kitty session path: ~/.config/kitty/kitty-startup.session
