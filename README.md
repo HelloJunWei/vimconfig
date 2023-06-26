@@ -19,3 +19,5 @@ vim-plug: https://github.com/junegunn/vim-plug
 ## nvim-treesitter
 :TSInstall typescript
 :TSInstall query
+
+需要安裝 kitty 以及 tmux
