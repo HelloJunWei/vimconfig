@@ -56,6 +56,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " sticky header 效果
 Plug 'wellle/context.vim'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 filetype plugin on
